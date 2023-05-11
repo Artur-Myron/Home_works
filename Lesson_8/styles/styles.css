@@ -1,124 +1,231 @@
-.wrapper {
-    min-height: 100vh;
+*,*::before,*::after {
+    box-sizing: inherit;
+}
+/* menu */
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.logo {
+    width: 140px;   
+}
+.men {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.men li a {
+    text-transform: uppercase;
+    color: rgba(71, 71, 71, 0.557);
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+.men li a:hover {
+    background-color: cornflowerblue;
+    color: black;
+}
+/* number1 */
+.column_1 {
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+/* n1 */
+.flex_object1 {
+    flex-grow: 1;
+}
+.flex_object2 {
+    flex-grow: 1;
+}
+.flex_object3 {
+    flex-grow: 1;
+}
+.flex_object4 {
+    flex-grow: 1;
+}
+.flex_object5 {
+    flex-grow: 2;
+}
+/* n2 */
+.flex_object_1 {
+    flex-grow: 2;
+}
+.flex_object_2 {
+    flex-grow: 2;
+}
+.flex_object_3 {
+    flex-grow: 1;
+}
+.flex_object_4 {
+    flex-grow: 1;
+}
+/* n3 */
+.flex_object__1 {
+    flex-grow: 1;
+}
+.flex_object__2 {
+    flex-grow: 1;
+}
+.flex_object__3 {
+    flex-grow: 2;
+}
+.flex_object__4 {
+    flex-grow: 2;
+}
+/* style */
+.styles_f {
+    height: 100px;
+    text-align: center;
+    background-color: khaki;
+    margin: 20px 20px 20px 20px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-style: solid;
+    border-color: red;
+    border-bottom-left-radius: 30px;
+}
+/* number2 */
+.container_1 {
+    background-color: aquamarine;
+    width: 100%;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1500px;
 }
-.circle {
-    width: 100px;
-    height: 100px;
-    background-color: blueviolet;
-    border-radius: 50%;
-    position: relative;
-    left: 0;
-    top: 0;
-
-    animation: left 2s linear infinite alternate-reverse,
-               borderRadius 1s linear infinite alternate-reverse,
-               changeColor 1s linear infinite alternate-reverse;
+.object {
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+    animation: loading 2s cubic-bezier(0.85, 0.01, 0.46, 0.96) infinite alternate-reverse;
+    border: 1px solid #fff;
 }
-
-.circle:hover {
-    animation-play-state: running, paused;
-}
-
-@keyframes left {
+@keyframes loading {
     0% {
-        left: 0;
-    }
-    100% {
-        left: 500px;
-    }
-}
-@keyframes borderRadius {
-    0% {
-        border-radius: 50%;
-    }
-    100% {
-        border-radius: 0;
-    }
-}
-@keyframes changeColor {
-    0% {
-        background-color: blueviolet;
+        width: 150px;
+        height: 150px;
+        transform: rotateZ(360deg);
     }
     50% {
-        background-color: orange;
+        width: 150px;
+        height: 150px;
+        transform: rotateZ(640deg);
     }
     100% {
-        background-color: gold;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transform: rotateZ(0);
     }
 }
-.cube {
-    width: 400px;
-    height: 400px;
-    /* border: 2px solid black; */
-    position: relative;
-   
-    transform-style: preserve-3d;
-    transform: rotate3d(1, 1, 1, 289deg);
-    /* transform: perspective(1500px); */
-    animation: rotateAnimationY 10s linear infinite,
-    rotateAnimationX 12s linear infinite,
-    unoqueAnimation 12s linear infinite;
-}
-/* @keyframes rotateAnimationY {
-    0% {
-        transform: rotateY(0);
-    }
-    100% {
-        transform: rotateY(360deg)
-    }
-} */
-@keyframes unoqueAnimation {
-    0% {
-        transform: rotate3d(0, 0, 0, 0);
-    }
-    100% {
-        transform: rotate3d(10, 1, 20, 360deg )
-    }
-}
-
-/* @keyframes rotateAnimationX {
-    0% {
-        transform: rotateX(0);
-    }
-    100% {
-        transform: rotateX(360deg)
-    }
-} */
-.side {
-    position: absolute;
-    border: 2px solid black;
+/* number3 */
+.container_2 {
     width: 100%;
-    height: 100%;
+    height: 800px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* backface-visibility: hidden; */
+    background-color: rgba(128, 128, 128, 0.557);
 }
-.side-front {
-    transform: translateZ(200px);
+.container_2 h2 {
+    padding-bottom: 150px;
 }
-.side-back {
-    transform: translateZ(-200px) rotateY(180deg);
-    background-color: aqua;
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.loading span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: #19e3d5;
+    margin: 0 7px;
+    border-radius: 15px;
+    animation: 1.2s upDown infinite;
+}
+.loading span:nth-child(1) {
+    animation-delay: .15s;
+}
+.loading span:nth-child(2) {
+    animation-delay: .3s;
+}
+.loading span:nth-child(3) {
+    animation-delay: .45s;
+}
+.loading span:nth-child(4) {
+    animation-delay: .6s;
+}
+.loading span:nth-child(5) {
+    animation-delay: .75s;
+}
+@keyframes upDown {
+    0% {
+        height: 20px;
+        background: #19e3d5;
+    }
+    50% {
+        height: 60px;
+        background: #d33ded;
+    }
+    100% {
+        height: 20px;
+        background: #f00e43;
+    }
+}
+.bac {
+    width: 1170px;
+    height: 800px;
+    background-image: url(../img/ahevUf.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.world {
+    width: 400px;
+    z-index: 1;
 }
-.side-top {
-    transform: translateY(-200px) rotateX(90deg);
-    background-color:antiquewhite ;
+.moon {
+    position: absolute;
+    width: 150px;
+    left: 900px;
+    top: 2500px;
+    animation: linear 11s moon infinite;
+    z-index: 0;
 }
-.side-bottum {
-    transform: translateY(200px) rotateX(90deg);
-    background-color:brown ;
-}
-.side-left {
-    transform: translateX(-200px) rotateY(-90deg);
-    background-color: olive;
-}
-.side-right {
-    transform: translateX(200px) rotateY(90deg);
-    background-color: yellowgreen;
+
+@keyframes moon {
+    0% {
+        z-index: 1;
+        width: 150px;
+    }
+    25% {
+        width: 300px;
+    }
+    50% {
+        bottom: 20px;
+        left: 300px;
+        width: 200px;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
